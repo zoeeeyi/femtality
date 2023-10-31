@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu Scenes/MainMenu.unity
+    path: Assets/Scenes/TO DELETE/MainMenu.unity
     guid: 0b8137c98ec9649b19ad826c5990c621
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/Transition.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Scenes/DrinkScene.unity
     guid: 3e98362a2aaae478ba1bbda42b687646
   - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Bonus Transition.unity
+    path: Assets/Scenes/Menu Scenes/Main Menu.unity
     guid: 9747b55a51bac4d17b765def8aadc63a
   - enabled: 1
     path: Assets/Scenes/Game Scenes/BonusScene.unity

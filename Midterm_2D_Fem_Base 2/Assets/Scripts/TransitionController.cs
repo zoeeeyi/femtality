@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
+using TMPro;
 
 public class TransitionController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TransitionController : MonoBehaviour
     private float currentLerpTime;
     private float lerpDuration = 1f;
 
+    [SerializeField] private TextMeshProUGUI introText;
     [SerializeField] private CurrentSceneSO currentSceneSO;
 
     [Header("Background Settings")]
@@ -32,6 +34,7 @@ public class TransitionController : MonoBehaviour
         }
 
         LoadbgImage();
+        LoadNextSceneIntro();
 
         //if (currentSceneSO.currentSceneName != null) Invoke("LoadNextScene", 3f);
 
@@ -87,6 +90,11 @@ public class TransitionController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    void LoadNextSceneIntro()
+    {
+        introText.text = currentSceneSO.nextSceneIntroText;
     }
 
     public void LoadNextScene()

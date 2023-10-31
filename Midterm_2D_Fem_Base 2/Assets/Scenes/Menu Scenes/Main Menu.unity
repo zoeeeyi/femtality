@@ -514,6 +514,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7df0042978f343299e6436efbb72b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSceneSO: {fileID: 11400000, guid: 04d4499326dad4b459dac0ade66bd306, type: 2}
+  gameIntroTexts:
+  - "Times may be tough, but you\u2019ve got to keep your head high. Repeat the key
+    inputs before time runs out to prevent your anxiety from coming to the surface
+    and being visible to others. Player on the left has AEDF key inputs, player on
+    the right has up down left right arrow keys.  "
+  - "3 chatty birds are trying to take up all the space, but you\u2019ve got to get
+    your word in. Make your speech bubble inflate without the birds popping it by
+    pressing the J key for player 1/space bar for player 2, then touch the doorknob
+    to make it to the next scene.  "
+  - "There\u2019s plenty of fish in the sea! Collect as many free drinks from your
+    admirers as you can, but beware\u2026 not all fish have good intentions. Avoid
+    the spiked drink or you lose.  "
+  - "Congrats! You made it this far. Climb out from household chores to reach your
+    full potential.  Hint: freedom is only possible when we\_are\_all\_free."
 --- !u!4 &461506716
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager1 : MonoBehaviour
 {
+    [SerializeField] private CurrentSceneSO currentSceneSO;
+    [SerializeField] private List<string> gameIntroTexts = new List<string>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,24 +23,32 @@ public class GameManager1 : MonoBehaviour
     // Call this function to load the "Cuticles" scene
     public void LoadCuticlesScene()
     {
-        SceneManager.LoadScene("HandScene");
+        currentSceneSO.SetNextSceneName("HandScene");
+        currentSceneSO.SetNextSceneText(gameIntroTexts[0]);
+        SceneManager.LoadScene("Transition");
     }
 
     // Call this function to load the "Bird" scene
     public void LoadBirdScene()
     {
+        currentSceneSO.SetNextSceneName("BirdScene");
+        currentSceneSO.SetNextSceneText(gameIntroTexts[1]);
         SceneManager.LoadScene("BirdScene");
     }
 
     // Call this function to load the "Drinks" scene
     public void LoadDrinkScene()
     {
+        currentSceneSO.SetNextSceneName("DrinkScene");
+        currentSceneSO.SetNextSceneText(gameIntroTexts[2]);
         SceneManager.LoadScene("DrinkScene");
     }
 
     // Call this function to load the "Glass Ceiling" scene
     public void LoadBonusScene()
     {
+        currentSceneSO.SetNextSceneName("BonusScene");
+        currentSceneSO.SetNextSceneText(gameIntroTexts[3]);
         SceneManager.LoadScene("BonusScene");
     }
 

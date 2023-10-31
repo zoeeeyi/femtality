@@ -9,15 +9,10 @@ public class BirdController : MonoBehaviour
     public TMP_Text timerText;
     private float timeRemaining = 20f;
 
-    [Header("Scene Settings")]
-    [SerializeField] private CurrentSceneSO currentSceneSO;
-    [SerializeField] private string nextSceneName;
-
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("UpdateTimer", 0f, 1f); // Calls the method UpdateTimer every 1 second
-        currentSceneSO.SetNextSceneName(nextSceneName);
     }
 
     // Update is called once per frame
