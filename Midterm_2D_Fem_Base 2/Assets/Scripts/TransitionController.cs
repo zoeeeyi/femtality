@@ -94,6 +94,7 @@ public class TransitionController : MonoBehaviour
 
     void LoadNextSceneIntro()
     {
+        GameObject.Find(currentSceneSO.nextSceneName);
         introText.text = currentSceneSO.nextSceneIntroText;
     }
 

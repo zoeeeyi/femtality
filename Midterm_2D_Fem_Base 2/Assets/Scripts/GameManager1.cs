@@ -33,7 +33,7 @@ public class GameManager1 : MonoBehaviour
     {
         currentSceneSO.SetNextSceneName("BirdScene");
         currentSceneSO.SetNextSceneText(gameIntroTexts[1]);
-        SceneManager.LoadScene("BirdScene");
+        SceneManager.LoadScene("Transition");
     }
 
     // Call this function to load the "Drinks" scene
@@ -41,7 +41,7 @@ public class GameManager1 : MonoBehaviour
     {
         currentSceneSO.SetNextSceneName("DrinkScene");
         currentSceneSO.SetNextSceneText(gameIntroTexts[2]);
-        SceneManager.LoadScene("DrinkScene");
+        SceneManager.LoadScene("Transition");
     }
 
     // Call this function to load the "Glass Ceiling" scene
@@ -49,7 +49,7 @@ public class GameManager1 : MonoBehaviour
     {
         currentSceneSO.SetNextSceneName("BonusScene");
         currentSceneSO.SetNextSceneText(gameIntroTexts[3]);
-        SceneManager.LoadScene("BonusScene");
+        SceneManager.LoadScene("Transition");
     }
 
     // Call this function to load the "Transition" scene
