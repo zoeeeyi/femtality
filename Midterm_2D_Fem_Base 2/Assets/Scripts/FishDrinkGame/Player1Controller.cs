@@ -8,14 +8,17 @@ public class Player1Controller : MonoBehaviour
 
     private float verticalMoveSpeed = 10f; // Speed of vertical movement
     private float upperYPosition = 7.32f; // Upper Y position
-    private float lowerYPosition = -3.18f; // Lower Y position
+    private float lowerYPosition = -1.18f; // Lower Y position
 
     private bool isMovingUp = false;
     private bool canFish = true;
 
+    [SerializeField] private DrinkController drinkController;
+    [SerializeField] private AudioSource drinkAudio;
+
     void Start()
     {
-        
+        upperYPosition = transform.position.y;
     }
 
     // Update is called once per frame
@@ -75,6 +78,9 @@ public class Player1Controller : MonoBehaviour
         {
             if (col.gameObject.CompareTag("Drink"))
             {
+                drinkAudio.Stop();
+                drinkAudio.Play();
+
                 Debug.Log("Collision detected with a GameObject tagged as 'Drink'.");
 
                 col.gameObject.SetActive(false);
@@ -82,12 +88,19 @@ public class Player1Controller : MonoBehaviour
 
                 //TODO: Spawn drink on hook.
 
-                Invoke("ToggleCanFish", 2f);
+                drinkController.pickupSafeDrink();
+
+                Invoke("ToggleCanFish", .3f);
             }
             else if (col.gameObject.CompareTag("Poison"))
             {
+                drinkAudio.Stop();
+                drinkAudio.Play();
+
                 Debug.Log("Collision detected with a GameObject tagged as 'Poison'.");
                 this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                col.gameObject.GetComponent<Collider2D>().isTrigger = true;
+                drinkController.pickupPoison();
             }
         }
     }

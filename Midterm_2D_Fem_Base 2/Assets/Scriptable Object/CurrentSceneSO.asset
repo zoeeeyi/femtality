@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab2a4eceddc6b4cb9e1efe87338f37, type: 3}
   m_Name: CurrentSceneSO
   m_EditorClassIdentifier: 
-  currentSceneName: HandScene
-  currentSceneWinLose: 1
-  nextSceneName: BonusScene
-  nextSceneIntroText: "Congrats! You made it this far. Climb out from household chores
-    to reach your full potential.  Hint: freedom is only possible when we\_are\_all\_free."
+  currentSceneName: DrinkScene
+  currentSceneWinLose: 0
+  nextSceneName: DrinkScene
+  nextSceneIntroText: "There\u2019s plenty of fish in the sea! Collect as many free
+    drinks from your admirers as you can, but beware\u2026 not all fish have good
+    intentions. Avoid the spiked drink or you lose.  "
   finishedGameCount: 0
   allGameFinished: 0

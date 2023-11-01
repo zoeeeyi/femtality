@@ -39,6 +39,12 @@ public class CuticleController : MonoBehaviour
 
     [SerializeField] CurrentSceneSO currentSceneSO;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource leftHandAudio;
+    [SerializeField] private AudioSource leftHandPainAudio;
+    [SerializeField] private AudioSource rightHandAudio;
+    [SerializeField] private AudioSource rightHandPainAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +126,7 @@ public class CuticleController : MonoBehaviour
         //get input player should press
         if (Input.GetKeyDown(sequenceL1[currentKeyIndexL]))
             {
+                leftHandAudio.Play();
                 //turn current sprite green
                 Color green = Color.green;
                 green.a = 0.5f;
@@ -131,6 +138,7 @@ public class CuticleController : MonoBehaviour
 
             else if (Input.anyKey && Input.inputString != sequenceL1[currentKeyIndexL].ToString().ToLower() && Input.inputString != sequenceL1[currentKeyIndexL].ToString().ToUpper() && Input.inputString != "" && !Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow))
         {
+                leftHandPainAudio.Play();
                 //turn current sprite red
                 Color red = Color.red;
                 red.a = 0.5f;
@@ -161,6 +169,7 @@ public class CuticleController : MonoBehaviour
         //get input player should press
         if (Input.GetKeyDown(sequenceL2[currentKeyIndexL]))
         {
+            leftHandAudio.Play();
             //turn current sprite green
             Color green = Color.green;
             green.a = 0.5f;
@@ -172,6 +181,7 @@ public class CuticleController : MonoBehaviour
 
         else if (Input.anyKey && Input.inputString != sequenceL2[currentKeyIndexL].ToString().ToLower() && Input.inputString != sequenceL2[currentKeyIndexL].ToString().ToUpper() && Input.inputString != "" && !Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow))
         {
+            leftHandPainAudio.Play();
             //turn current sprite red
             Color red = Color.red;
             red.a = 0.5f;
@@ -202,6 +212,7 @@ public class CuticleController : MonoBehaviour
         //get input player should press
         if (Input.GetKeyDown(sequenceR1[currentKeyIndexR]))
         {
+            rightHandAudio.Play();
             //turn current sprite green
             Color green = Color.green;
             green.a = 0.5f;
@@ -213,6 +224,7 @@ public class CuticleController : MonoBehaviour
 
         else if (Input.anyKey && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
+            rightHandPainAudio.Play();
             //turn current sprite red
             Color red = Color.red;
             red.a = 0.5f;
@@ -243,6 +255,7 @@ public class CuticleController : MonoBehaviour
         //get input player should press
         if (Input.GetKeyDown(sequenceR2[currentKeyIndexR]))
         {
+            rightHandAudio.Play();
             //turn current sprite green
             Color green = Color.green;
             green.a = 0.5f;
@@ -254,6 +267,7 @@ public class CuticleController : MonoBehaviour
 
         else if (Input.anyKey && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
+            rightHandPainAudio.Play();
             //turn current sprite red
             Color red = Color.red;
             red.a = 0.5f;

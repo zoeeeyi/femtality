@@ -78,7 +78,7 @@ public class TransitionController : MonoBehaviour
         {
             switch (currentSceneSO.nextSceneName)
             {
-                case "FishScene":
+                case "DrinkScene":
                     backGroundImage.sprite = drinkSceneImage;
                     break;
 
@@ -111,7 +111,7 @@ public class TransitionController : MonoBehaviour
         {
             switch (currentSceneSO.nextSceneName)
             {
-                case "FishScene":
+                case "DrinkScene":
                     activatedText = drinkText.gameObject;
                     break;
 
@@ -136,6 +136,7 @@ public class TransitionController : MonoBehaviour
 
     public void LoadNextScene()
     {
+        GameObject.Find("Button Sound")?.GetComponent<AudioSource>().Play();
         string nextSceneName = currentSceneSO.nextSceneName;
         SceneManager.LoadScene(nextSceneName);
     }
