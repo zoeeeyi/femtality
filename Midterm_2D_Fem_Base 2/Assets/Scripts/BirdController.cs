@@ -7,7 +7,7 @@ using TMPro;
 public class BirdController : MonoBehaviour
 {
     public TMP_Text timerText;
-    private float timeRemaining = 20f;
+    private float timeRemaining = 100f;
 
     // Start is called before the first frame update
     void Start()

@@ -24,6 +24,14 @@ public class TransitionController : MonoBehaviour
     [SerializeField] private Sprite handSceneImage;
     [SerializeField] private Sprite bonusSceneImage;
 
+    [Space]
+    [Header("Intro Texts Settings")]
+    private GameObject activatedText;
+    [SerializeField] TextMeshProUGUI drinkText;
+    [SerializeField] TextMeshProUGUI birdText;
+    [SerializeField] TextMeshProUGUI handText;
+    [SerializeField] TextMeshProUGUI bonusText;
+
     void Start()
     {
         image = GetComponent<Image>();
@@ -34,7 +42,7 @@ public class TransitionController : MonoBehaviour
         }
 
         LoadbgImage();
-        LoadNextSceneIntro();
+        LoadNextSceneText();
 
         //if (currentSceneSO.currentSceneName != null) Invoke("LoadNextScene", 3f);
 
@@ -70,7 +78,7 @@ public class TransitionController : MonoBehaviour
         {
             switch (currentSceneSO.nextSceneName)
             {
-                case "DrinkScene":
+                case "FishScene":
                     backGroundImage.sprite = drinkSceneImage;
                     break;
 
@@ -78,7 +86,7 @@ public class TransitionController : MonoBehaviour
                     backGroundImage.sprite = handSceneImage;
                     break;
 
-                case "BridScene":
+                case "BirdScene":
                     backGroundImage.sprite = birdSceneImage;
                     break;
 
@@ -92,10 +100,38 @@ public class TransitionController : MonoBehaviour
         }
     }
 
-    void LoadNextSceneIntro()
+    void LoadNextSceneText()
     {
-        GameObject.Find(currentSceneSO.nextSceneName);
-        introText.text = currentSceneSO.nextSceneIntroText;
+        /*        GameObject.Find(currentSceneSO.nextSceneName);
+                introText.text = currentSceneSO.nextSceneIntroText;
+
+        */
+        activatedText?.gameObject.SetActive(false);
+        if (currentSceneSO.nextSceneName != null)
+        {
+            switch (currentSceneSO.nextSceneName)
+            {
+                case "FishScene":
+                    activatedText = drinkText.gameObject;
+                    break;
+
+                case "HandScene":
+                    activatedText = handText.gameObject;
+                    break;
+
+                case "BirdScene":
+                    activatedText = birdText.gameObject;
+                    break;
+
+                case "BonusScene":
+                    activatedText = bonusText.gameObject;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        activatedText?.gameObject.SetActive(true);
     }
 
     public void LoadNextScene()

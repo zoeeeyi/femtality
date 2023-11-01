@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15.48999, y: -195.72998}
-  m_SizeDelta: {x: -1087.35, y: -765.55}
+  m_AnchoredPosition: {x: 5.4699707, y: -295}
+  m_SizeDelta: {x: -1315.08, y: -864.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121264230
 MonoBehaviour:
@@ -335,12 +335,12 @@ GameObject:
   - component: {fileID: 363025507}
   - component: {fileID: 363025506}
   m_Layer: 5
-  m_Name: Intro Text (2)
+  m_Name: Bonus Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &363025505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -348,16 +348,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363025504}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1975807066}
+  m_Father: {fileID: 658996625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 13}
+  m_AnchoredPosition: {x: -38, y: 0}
   m_SizeDelta: {x: 757.02, y: -514.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363025506
@@ -380,10 +380,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Take up space\n3 chatty birds are trying to take up all the space, but
-    you\u2019ve got to get your word in. Make your speech bubble inflate without
-    the birds popping it by pressing the J key for player 1/space bar for player
-    2, then touch the doorknob to make it to the next scene. \n"
+  m_text: "Break the glass ceiling\n\nCongrats! You made it this far. Climb out from
+    household chores to reach your full potential. \nHint: freedom is only possible
+    when we\_are\_all\_free."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -392,8 +391,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -416,7 +415,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -446,7 +445,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.6766357, y: 0, z: 103.28766, w: 0}
+  m_margin: {x: -4.6766357, y: 0, z: -113.73956, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -526,6 +525,49 @@ MonoBehaviour:
   birdSceneImage: {fileID: 21300000, guid: 461cfcfbd1b15614cbbf4b53f1f0e161, type: 3}
   handSceneImage: {fileID: 21300000, guid: c8e566c285ce1094cbee9f9e3bc99345, type: 3}
   bonusSceneImage: {fileID: 21300000, guid: 4a8d4feaff4741d47b84c773c377d0fc, type: 3}
+  drinkText: {fileID: 1970034606}
+  birdText: {fileID: 1305819523}
+  handText: {fileID: 2140149373}
+  bonusText: {fileID: 363025506}
+--- !u!1 &658996624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 658996625}
+  m_Layer: 5
+  m_Name: Intro Texts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &658996625
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658996624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1970034605}
+  - {fileID: 2140149372}
+  - {fileID: 363025505}
+  - {fileID: 1305819522}
+  m_Father: {fileID: 1975807066}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1079227115
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,8 +694,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15.25, y: 228.45998}
-  m_SizeDelta: {x: 1092.02, y: 683.6699}
+  m_AnchoredPosition: {x: 18.340027, y: 263.35004}
+  m_SizeDelta: {x: 1104.33, y: 767.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154518004
 MonoBehaviour:
@@ -830,12 +872,12 @@ GameObject:
   - component: {fileID: 1305819524}
   - component: {fileID: 1305819523}
   m_Layer: 5
-  m_Name: Intro Text (3)
+  m_Name: Bird Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305819522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -843,12 +885,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305819521}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1975807066}
+  m_Father: {fileID: 658996625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1065,12 +1107,12 @@ GameObject:
   - component: {fileID: 1970034607}
   - component: {fileID: 1970034606}
   m_Layer: 5
-  m_Name: Intro Text
+  m_Name: Fish Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1970034605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1078,17 +1120,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970034604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1975807066}
+  m_Father: {fileID: 658996625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 13}
-  m_SizeDelta: {x: 757.02, y: -514.72}
+  m_AnchoredPosition: {x: -153, y: -27.87}
+  m_SizeDelta: {x: 715.35, y: 596.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970034606
 MonoBehaviour:
@@ -1110,21 +1152,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Take up space\n3 chatty birds are trying to take up all the space, but
-    you\u2019ve got to get your word in. Make your speech bubble inflate without
-    the birds popping it by pressing the J key for player 1/space bar for player
-    2, then touch the doorknob to make it to the next scene. \n"
+  m_text: "Stay safe out there\n\nThere\u2019s plenty of fish in the sea! Collect
+    as many free drinks from your admirers as you can, but beware\u2026 not all fish
+    have good intentions. Avoid the spiked drink or you lose. \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aee3a6c49b74b44218e215fe0c3be6cd, type: 2}
+  m_sharedMaterial: {fileID: 2686962122368387951, guid: aee3a6c49b74b44218e215fe0c3be6cd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -1140,13 +1181,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 34.07
+  m_fontSizeBase: 34.07
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1176,7 +1217,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.6766357, y: 0, z: 103.28766, w: 0}
+  m_margin: {x: -4.6766357, y: -140.6337, z: -327.2946, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1325,10 +1366,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 121264229}
-  - {fileID: 1970034605}
-  - {fileID: 2140149372}
-  - {fileID: 363025505}
-  - {fileID: 1305819522}
+  - {fileID: 658996625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1348,12 +1386,12 @@ GameObject:
   - component: {fileID: 2140149374}
   - component: {fileID: 2140149373}
   m_Layer: 5
-  m_Name: Intro Text (1)
+  m_Name: Hand Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2140149372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1361,16 +1399,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140149371}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1975807066}
+  m_Father: {fileID: 658996625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 13}
+  m_AnchoredPosition: {x: -104, y: 0}
   m_SizeDelta: {x: 757.02, y: -514.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140149373
@@ -1393,10 +1431,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Take up space\n3 chatty birds are trying to take up all the space, but
-    you\u2019ve got to get your word in. Make your speech bubble inflate without
-    the birds popping it by pressing the J key for player 1/space bar for player
-    2, then touch the doorknob to make it to the next scene. \n"
+  m_text: "Manicured appearance\n\nTimes may be tough, but you\u2019ve got to keep
+    your head high. Repeat the key inputs before time runs out to prevent your anxiety
+    from coming to the surface and being visible to others. Player on the left has
+    AEDF key inputs, player on the right has up down left right arrow keys. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1405,8 +1443,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1429,7 +1467,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1459,7 +1497,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.6766357, y: 0, z: 103.28766, w: 0}
+  m_margin: {x: -4.6766357, y: 0, z: -210.9678, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

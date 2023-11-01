@@ -29,7 +29,7 @@ public class BonusGameManager : MonoBehaviour
             Instantiate(randomPrefab, spawnPosition, Quaternion.identity);
         }
 
-        Invoke("DeleteFloor", 2f);
+        Invoke("DeleteFloor", 4f);
 
         StartCoroutine(SpawnCeilingDelayed(2f + (platformCount * 0.2f)));
     }
@@ -63,20 +63,6 @@ public class BonusGameManager : MonoBehaviour
         BoxCollider2D collider = ceiling.AddComponent<BoxCollider2D>();
         collider.size = new Vector2(2f, 0.01f);
         collider.offset = new Vector2(0f, 0.05f);
-    }
-
-    // OnTriggerEnter method to handle collision with the ceiling
-    void OnTriggerEnter(Collider2D other)
-    {
-        if (other.CompareTag("Ceiling"))
-        {
-            // Spawn the new sprite when a collision with the ceiling occurs
-            Vector3 spawnPosition = other.transform.position + Vector3.up * 2f; 
-            Instantiate(newSpritePrefab, spawnPosition, Quaternion.identity);
-
-            // Destroy the ceiling
-            Destroy(ceiling);
-        }
     }
 }
 

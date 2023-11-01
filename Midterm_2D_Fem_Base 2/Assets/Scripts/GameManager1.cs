@@ -55,7 +55,8 @@ public class GameManager1 : MonoBehaviour
     // Call this function to load the "Transition" scene
     public void LoadTransitionScene()
     {
-        SceneManager.LoadScene("Transition");
+        if (currentSceneSO.nextSceneName.Equals("Main Menu")) SceneManager.LoadScene("Main Menu");
+        else SceneManager.LoadScene("Transition");
     }
 
     // Call this function to load the "Transition" scene with the Bonus round
@@ -78,5 +79,10 @@ public class GameManager1 : MonoBehaviour
     public void LoadRestart()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void TryAgain()
+    {
+        SceneManager.LoadScene(currentSceneSO.currentSceneName);
     }
 }

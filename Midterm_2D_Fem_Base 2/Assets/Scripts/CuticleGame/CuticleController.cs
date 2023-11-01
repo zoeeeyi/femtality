@@ -35,7 +35,9 @@ public class CuticleController : MonoBehaviour
     int currentKeyIndexR;
 
     public TMP_Text timerText;
-    private float timeRemaining = 10f;
+    [SerializeField] private float timeRemaining = 10f;
+
+    [SerializeField] CurrentSceneSO currentSceneSO;
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +138,8 @@ public class CuticleController : MonoBehaviour
                 
                 currentKeyIndexL++;
 
+            currentSceneSO.SetCurrentSceneWinLose(false);
+
                 return;
             }
     }
@@ -175,6 +179,8 @@ public class CuticleController : MonoBehaviour
 
             currentKeyIndexL++;
 
+            currentSceneSO.SetCurrentSceneWinLose(false);
+
             return;
         }
     }
@@ -205,7 +211,7 @@ public class CuticleController : MonoBehaviour
             return;
         }
 
-        else if (Input.anyKey && Input.inputString != sequenceR1[currentKeyIndexR].ToString().ToLower() && Input.inputString != sequenceR1[currentKeyIndexR].ToString().ToUpper() && Input.inputString != "" && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
+        else if (Input.anyKey && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
             //turn current sprite red
             Color red = Color.red;
@@ -213,6 +219,8 @@ public class CuticleController : MonoBehaviour
             imageToChangeR1[currentKeyIndexR].color = red;
 
             currentKeyIndexR++;
+
+            currentSceneSO.SetCurrentSceneWinLose(false);
 
             return;
         }
@@ -244,7 +252,7 @@ public class CuticleController : MonoBehaviour
             return;
         }
 
-        else if (Input.anyKey && Input.inputString != sequenceR2[currentKeyIndexR].ToString().ToLower() && Input.inputString != sequenceR2[currentKeyIndexR].ToString().ToUpper() && Input.inputString != "" && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
+        else if (Input.anyKey && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
             //turn current sprite red
             Color red = Color.red;
@@ -252,6 +260,8 @@ public class CuticleController : MonoBehaviour
             imageToChangeR2[currentKeyIndexR].color = red;
 
             currentKeyIndexR++;
+
+            currentSceneSO.SetCurrentSceneWinLose(false);
 
             return;
         }
