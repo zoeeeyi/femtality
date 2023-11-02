@@ -1786,7 +1786,7 @@ MonoBehaviour:
   - {fileID: 4775321045510188393, guid: ffb17f0a0780544aba6f84061ac6f817, type: 3}
   ceilingPrefab: {fileID: 853025890034375660, guid: adf1c4f257e8f40cc98cddca2fa98a79, type: 3}
   newSpritePrefab: {fileID: 7834501078738512470, guid: e3a8b18e094bb4a0f86ab5a087ec321a, type: 3}
-  platformCount: 50
+  platformCount: 10
 --- !u!4 &1505012532
 Transform:
   m_ObjectHideFlags: 0

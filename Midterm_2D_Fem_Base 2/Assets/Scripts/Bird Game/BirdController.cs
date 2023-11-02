@@ -9,6 +9,10 @@ public class BirdController : MonoBehaviour
     public TMP_Text timerText;
     private float timeRemaining = 100f;
 
+    private int finishedPlayerCount = 0;
+
+    [SerializeField] private NextSceneSetting nextSceneSetting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +46,14 @@ public class BirdController : MonoBehaviour
         // Update the text UI with the current time
         //timerText.text = minutes + ":" + seconds;
         timerText.text = seconds;
+    }
+
+    public void AddFinishedPlayer()
+    {
+        finishedPlayerCount++;
+        if (finishedPlayerCount == 2)
+        {
+            nextSceneSetting.WinGameInstantly();
+        }
     }
 }

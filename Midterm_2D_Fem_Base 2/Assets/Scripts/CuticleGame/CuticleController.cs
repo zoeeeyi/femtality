@@ -53,7 +53,7 @@ public class CuticleController : MonoBehaviour
 
     [Header("Score System")]
     GameObject scoreManagerGO;
-    ScoreManager scoreManager;
+    [SerializeField] private ScoreManager scoreManager;
     int p1Score;
     int p2Score;
     bool p1Active = true;
@@ -219,6 +219,7 @@ public class CuticleController : MonoBehaviour
                 p1Score -= 15;
                 p1Active = false;
                 p1Lost.SetActive(true);
+                Debug.Log("11111");
                 if (!p2Active) nextSceneSetting.LoseGameInstantly();
             }
 

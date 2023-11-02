@@ -5011,6 +5011,7 @@ MonoBehaviour:
   - {fileID: 119047462}
   - {fileID: 628638145}
   - {fileID: 614465183}
+  scoreManager: {fileID: 1702306344}
   p1ScoreText: {fileID: 309724820}
   p2ScoreText: {fileID: 1979575172}
   p1Lost: {fileID: 1572852593}
