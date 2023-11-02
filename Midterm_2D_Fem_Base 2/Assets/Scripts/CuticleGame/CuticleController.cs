@@ -45,6 +45,26 @@ public class CuticleController : MonoBehaviour
     [SerializeField] private AudioSource rightHandAudio;
     [SerializeField] private AudioSource rightHandPainAudio;
 
+    [Header("Finger Sprite Settings")]
+    [SerializeField] private GameObject[] leftHandSprites;
+    [SerializeField] private GameObject[] rightHandSprites;
+    int leftHandIndex = 0;
+    int rightHandIndex = 0;
+
+    [Header("Score System")]
+    GameObject scoreManagerGO;
+    ScoreManager scoreManager;
+    int p1Score;
+    int p2Score;
+    bool p1Active = true;
+    bool p2Active = true;
+    [SerializeField] private TMP_Text p1ScoreText;
+    [SerializeField] private TMP_Text p2ScoreText;
+    [SerializeField] private GameObject p1Lost;
+    [SerializeField] private GameObject p2Lost;
+
+    [SerializeField] private NextSceneSetting nextSceneSetting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,30 +84,64 @@ public class CuticleController : MonoBehaviour
             SceneManager.LoadScene("EndGame");
         }
 
-        if(patternNumL == 1)
+        if (!p1Active)
+        {
+            foreach (Image image in imageToChangeL1)
+            {
+                image.color = new Vector4(0, 0, 0, 0);
+            }
+            foreach (Image image in imageToChangeL2)
+            {
+                image.color = new Vector4(0, 0, 0, 0);
+            }
+        }
+
+        if (!p2Active)
+        {
+            foreach (Image image in imageToChangeR1)
+            {
+                image.color = new Vector4(0, 0, 0, 0);
+            }
+            foreach (Image image in imageToChangeR2)
+            {
+                image.color = new Vector4(0, 0, 0, 0);
+            }
+        }
+
+        if (patternNumL == 1 && p1Active)
         {
             pattern1L.SetActive(true);
             pattern2L.SetActive(false);
             DetectInputLeft1();
         }
-        if(patternNumR == 1)
+        if (patternNumR == 1 && p2Active)
         {
             pattern1R.SetActive(true);
             pattern2R.SetActive(false);
             DetectInputRight1();
         }
 
-        if(patternNumL == 2)
+        if (patternNumL == 2 && p1Active)
         {
             pattern2L.SetActive(true);
             DetectInputLeft2();
         }
-        if (patternNumR == 2)
+        if (patternNumR == 2 && p2Active)
         {
             pattern2R.SetActive(true);
             DetectInputRight2();
         }
 
+        if (p1Active)
+        {
+            p1ScoreText.text = p1Score.ToString();
+            scoreManager.p1Score = p1Score;
+        }
+        if (p2Active)
+        {
+            p2ScoreText.text = p2Score.ToString();
+            scoreManager.p2Score = p2Score;
+        }
     }
 
     void UpdateTimer()
@@ -125,31 +179,53 @@ public class CuticleController : MonoBehaviour
 
         //get input player should press
         if (Input.GetKeyDown(sequenceL1[currentKeyIndexL]))
-            {
-                leftHandAudio.Play();
-                //turn current sprite green
-                Color green = Color.green;
-                green.a = 0.5f;
-                imageToChangeL1[currentKeyIndexL].color = green;
-                    currentKeyIndexL++;
-
-                return;
-            }
-
-            else if (Input.anyKey && Input.inputString != sequenceL1[currentKeyIndexL].ToString().ToLower() && Input.inputString != sequenceL1[currentKeyIndexL].ToString().ToUpper() && Input.inputString != "" && !Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow))
         {
-                leftHandPainAudio.Play();
-                //turn current sprite red
-                Color red = Color.red;
-                red.a = 0.5f;
-                imageToChangeL1[currentKeyIndexL].color = red;
+            leftHandAudio.Play();
+            //turn current sprite green
+            Color green = Color.green;
+            green.a = 0.5f;
+            imageToChangeL1[currentKeyIndexL].color = green;
                 
-                currentKeyIndexL++;
+            currentKeyIndexL++;
+
+            p1Score += 10;
+
+            return;
+        }
+
+        else if (Input.anyKey && Input.inputString != sequenceL1[currentKeyIndexL].ToString().ToLower() && Input.inputString != sequenceL1[currentKeyIndexL].ToString().ToUpper() && Input.inputString != "" && !Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            leftHandPainAudio.Play();
+            //turn current sprite red
+            Color red = Color.red;
+            red.a = 0.5f;
+            imageToChangeL1[currentKeyIndexL].color = red;
+                
+            currentKeyIndexL++;
 
             currentSceneSO.SetCurrentSceneWinLose(false);
 
-                return;
+            if (leftHandIndex < leftHandSprites.Length)
+            {
+                leftHandSprites[leftHandIndex].SetActive(false);
+                leftHandIndex++;
             }
+            else
+            {
+                foreach (Image image in imageToChangeL1)
+                {
+                    image.color = red;
+                }
+                p1Score -= 15;
+                p1Active = false;
+                p1Lost.SetActive(true);
+                if (!p2Active) nextSceneSetting.LoseGameInstantly();
+            }
+
+            p1Score -= 5;
+
+            return;
+        }
     }
 
     void DetectInputLeft2()
@@ -175,6 +251,7 @@ public class CuticleController : MonoBehaviour
             green.a = 0.5f;
             imageToChangeL2[currentKeyIndexL].color = green;
             currentKeyIndexL++;
+            p1Score += 10;
 
             return;
         }
@@ -190,6 +267,25 @@ public class CuticleController : MonoBehaviour
             currentKeyIndexL++;
 
             currentSceneSO.SetCurrentSceneWinLose(false);
+
+            if (leftHandIndex < leftHandSprites.Length)
+            {
+                leftHandSprites[leftHandIndex].SetActive(false);
+                leftHandIndex++;
+            }
+            else
+            {
+                foreach (Image image in imageToChangeL2)
+                {
+                    image.color = red;
+                }
+                p1Score -= 15;
+                p1Active = false;
+                p1Lost.SetActive(true);
+                if (!p2Active) nextSceneSetting.LoseGameInstantly();
+            }
+
+            p1Score -= 5;
 
             return;
         }
@@ -219,6 +315,8 @@ public class CuticleController : MonoBehaviour
             imageToChangeR1[currentKeyIndexR].color = green;
             currentKeyIndexR++;
 
+            p2Score += 10;
+
             return;
         }
 
@@ -233,6 +331,26 @@ public class CuticleController : MonoBehaviour
             currentKeyIndexR++;
 
             currentSceneSO.SetCurrentSceneWinLose(false);
+
+            if (rightHandIndex < rightHandSprites.Length)
+            {
+                rightHandSprites[rightHandIndex].SetActive(false);
+                rightHandIndex++;
+            }
+            else
+            {
+                foreach (Image image in imageToChangeR1)
+                {
+                    image.color = red;
+                }
+                p2Score -= 15;
+
+                p2Active = false;
+                p2Lost.SetActive(true);
+                if (!p1Active) nextSceneSetting.LoseGameInstantly();
+            }
+
+            p2Score -= 5;
 
             return;
         }
@@ -262,6 +380,8 @@ public class CuticleController : MonoBehaviour
             imageToChangeR2[currentKeyIndexR].color = green;
             currentKeyIndexR++;
 
+            p2Score += 10;
+
             return;
         }
 
@@ -276,6 +396,26 @@ public class CuticleController : MonoBehaviour
             currentKeyIndexR++;
 
             currentSceneSO.SetCurrentSceneWinLose(false);
+
+            if (rightHandIndex < rightHandSprites.Length)
+            {
+                rightHandSprites[rightHandIndex].SetActive(false);
+                rightHandIndex++;
+            }
+            else
+            {
+                foreach (Image image in imageToChangeR2)
+                {
+                    image.color = red;
+                }
+                p2Score -= 15;
+
+                p2Active = false;
+                p2Lost.SetActive(true);
+                if (!p1Active) nextSceneSetting.LoseGameInstantly();
+            }
+
+            p2Score -= 5;
 
             return;
         }
