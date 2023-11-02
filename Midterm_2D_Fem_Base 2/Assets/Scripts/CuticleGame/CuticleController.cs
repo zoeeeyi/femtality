@@ -79,7 +79,8 @@ public class CuticleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeRemaining <= 0 || (patternNumL == 3 && patternNumR == 3))
+        if (timeRemaining <= 0 || (patternNumL == 3 && patternNumR == 3) 
+            || (patternNumL == 3 && !p2Active) || (patternNumR == 3 && !p1Active))
         {
             SceneManager.LoadScene("EndGame");
         }
@@ -219,7 +220,6 @@ public class CuticleController : MonoBehaviour
                 p1Score -= 15;
                 p1Active = false;
                 p1Lost.SetActive(true);
-                Debug.Log("11111");
                 if (!p2Active) nextSceneSetting.LoseGameInstantly();
             }
 

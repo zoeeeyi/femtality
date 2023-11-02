@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_text: "Manicured appearance\n\nTimes may be tough, but you\u2019ve got to keep
     your head high. Repeat the key inputs before time runs out to prevent your anxiety
     from coming to the surface and being visible to others. Player on the left has
-    AEDF key inputs, player on the right has up down left right arrow keys. \n"
+    WASD key inputs, player on the right has up down left right arrow keys. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}

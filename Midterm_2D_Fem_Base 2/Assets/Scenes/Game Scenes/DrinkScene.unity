@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneSO: {fileID: 11400000, guid: 04d4499326dad4b459dac0ade66bd306, type: 2}
-  nextSceneName: HandScene
+  nextSceneName: BonusScene
 --- !u!4 &204202652
 Transform:
   m_ObjectHideFlags: 0
